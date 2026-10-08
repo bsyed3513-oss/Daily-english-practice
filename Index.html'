@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Daily English Practice Assistant</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 15px;
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #007bff;
+      margin-top: 0;
+    }
+    .word-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .meaning {
+      color: #27ae60;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .example {
+      font-style: italic;
+      color: #555;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>📚 Daily Word of the Day</h2>
+    <div class="word-title" id="word">Perseverance</div>
+    <div class="meaning" id="meaning">हिंदी अर्थ: दृढ़ता / लगातार प्रयास</div>
+    <p class="example" id="example">Example: Success requires hard work and perseverance.</p>
+  </div>
+
+  <div class="card">
+    <h2>💬 Daily Conversation Practice</h2>
+    <p><strong>Hindi:</strong> क्या आप आज जिम जा रहे हैं?</p>
+    <p><strong>English:</strong> Are you going to the gym today?</p>
+  </div>
+
+  <button onclick="getNewPractice()">🔄 Get New Practice Lesson</button>
+
+  <script>
+    const lessons = [
+      {
+        word: "Consistent",
+        meaning: "हिंदी अर्थ: लगातार / एक जैसा",
+        example: "Example: Consistent practice leads to success."
+      },
+      {
+        word: "Fluent",
+        meaning: "हिंदी अर्थ: धाराप्रवाह बोल पाना",
+        example: "Example: She speaks fluent English."
+      },
+      {
+        word: "Opportunity",
+        meaning: "हिंदी अर्थ: अवसर / मौका",
+        example: "Example: Don't miss this continuous opportunity."
+      }
+    ];
+
+    function getNewPractice() {
+      const randomIndex = Math.floor(Math.random() * lessons.length);
+      const selected = lessons[randomIndex];
+      
+      document.getElementById('word').innerText = selected.word;
+      document.getElementById('meaning').innerText = selected.meaning;
+      document.getElementById('example').innerText = selected.example;
+    }
+  </script>
+
+</body>
+</html>
